@@ -1,0 +1,7 @@
+*.zip
+*.*log*
+*.*tar*
+*.bin
+/bin/
+/tmp/
+/squashfs-root/

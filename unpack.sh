@@ -1,4 +1,6 @@
-#!/bin/bash -e
+#!/bin/sh
+set -e
+
 if [ $# -ne 1 ]; then
   echo "Usage: $0 <firmware>"
   exit 1

@@ -1,4 +1,6 @@
-#!/bin/bash -e
+#!/bin/sh
+set -e
+
 if [ $# -ne 1 ]; then
   echo "Usage: $0 <new firmware filename>"
   exit 1
@@ -18,4 +20,3 @@ ubinize -m 2048 -p 128KiB -o tmp/ubi-new.img etc/ubinize-ipq50xx.cfg
 cat tmp/header.bin tmp/ubi-new.img >$firmware
 printf '\x50\x72' | dd of=$firmware bs=1 seek=28 count=2 conv=notrunc
 bin/md5-fix $firmware
-rm -rf tmp
